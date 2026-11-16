@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="FX Sustentabilidade">
+  <!-- LOGO PROVISÓRIO — substitua pelo arquivo oficial (logo.svg ou logo.png; ajuste o caminho em js/config.js) -->
+  <circle cx="60" cy="60" r="57" fill="#fff" stroke="#174C3A" stroke-width="4"/>
+  <circle cx="60" cy="60" r="47" fill="none" stroke="#A8BDAA" stroke-width="1.5" stroke-dasharray="2 5"/>
+  <text x="60" y="70" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="38" fill="#17191A">FX</text>
+  <text x="60" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="1.6" fill="#174C3A">SUSTENTABILIDADE</text>
+</svg>
