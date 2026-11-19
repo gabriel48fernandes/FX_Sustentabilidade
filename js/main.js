@@ -177,6 +177,23 @@
       window.open(waLink(lines.join("\n")), "_blank", "noopener");
     });
   }
+    /* ---------- Imagem do topo das páginas internas (config.js → pageHero) ---------- */
+  function initPageHero() {
+    var hero = $(".page-hero");
+    var conf = cfg.pageHero && cfg.pageHero[page];
+    if (!hero || !conf) return;
+    var src = typeof conf === "string" ? conf : conf.src;
+    if (!src) return;
+    var img = new Image();
+    img.className = "page-hero__img";
+    img.alt = "";
+    img.decoding = "async";
+    if (conf.position) img.style.objectPosition = conf.position;
+    img.addEventListener("load", function () { hero.classList.add("has-img"); });
+    img.addEventListener("error", function () { img.remove(); });
+    img.src = src;
+    hero.insertBefore(img, hero.firstChild);
+  }
 
   /* ---------- Abre o <details> indicado na URL (ex.: servicos.html#pgrss) ---------- */
   function openFromHash() {
@@ -194,6 +211,7 @@
   renderFooter();
   bindConfig();
   initHeroVideo();
+  initPageHero();
   initReveal();
   initContactForm();
   openFromHash();

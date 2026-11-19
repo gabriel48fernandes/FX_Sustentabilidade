@@ -55,6 +55,20 @@ window.FX_CONFIG = {
   ],
   navCta: { label: "Orçamento", message: "budget" },
 
+    /* ---------- Imagem do topo de cada página interna ----------
+     Deixe "" para ficar só o fundo verde. Para usar uma foto, coloque o arquivo em
+     assets/img/paginas/ e escreva o caminho (ex.: "assets/img/paginas/sede.jpg").
+     Para ajustar o enquadramento: { src: "assets/img/paginas/sede.jpg", position: "50% 30%" }
+     (position = horizontal vertical, de 0% a 100%). */
+  pageHero: {
+    quem:     "assets/img/paginas/sede.jpeg",   // ex.: "assets/img/paginas/sede.jpg"
+    servicos: "",
+    hospital: "",
+    academia: "",
+    projetos: "",
+    contato:  ""
+  },
+
   /* ---------- Hero da home (vídeo) ----------
      1) Coloque o 1º frame do vídeo em assets/img/hero-poster.jpg  (aparece na hora)
      2) Coloque o vídeo em assets/video/hero.mp4 e hero.webm       (entra por cima quando carregar)
