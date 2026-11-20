@@ -61,7 +61,7 @@ window.FX_CONFIG = {
      Para ajustar o enquadramento: { src: "assets/img/paginas/sede.jpg", position: "50% 30%" }
      (position = horizontal vertical, de 0% a 100%). */
   pageHero: {
-    quem:     "assets/img/paginas/sede.jpeg",   // ex.: "assets/img/paginas/sede.jpg"
+    quem:     "",   // ex.: "assets/img/paginas/sede.jpg"
     servicos: "",
     hospital: "",
     academia: "",

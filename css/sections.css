@@ -174,3 +174,26 @@ body[data-page="quem"] .page-hero { --hero-shade: .35; } */
 .section--forest::before { background-size: 220% auto; background-position: 12% 70%; }
 .cta-band::before        { background-size: 300% auto; background-position: 47% 0%; }
 .front--featured::before { background-size: 450% auto; background-position: 43% 80%; }
+
+/* Heros internos: foto suave por trás do verde */
+.page-hero { isolation: isolate; }
+.page-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: var(--img-bloco, url("../assets/img/hero-poster.jpg"));
+  background-repeat: no-repeat;
+  background-size: 200% auto;       /* zoom */
+  background-position: 47% 0%;      /* recorte */
+  opacity: .2;                      /* força da foto */
+}
+/* um recorte diferente por página */
+body[data-page="quem"]     .page-hero::before { background-position: 30% 5%; }
+body[data-page="servicos"] .page-hero::before { background-position: 30% 5%; }
+body[data-page="hospital"] .page-hero::before { background-position: 30% 5%; }
+body[data-page="academia"] .page-hero::before { background-position: 90% 20%; }
+body[data-page="projetos"] .page-hero::before { background-position: 12% 70%; }
+body[data-page="contato"]  .page-hero::before { background-position: 60% 0%; }
+/* quando uma página ganhar foto própria (pageHero), este efeito sai sozinho */
+.page-hero.has-img::before { display: none; }
+@media (max-width: 760px) {
+  .page-hero::before { background-size: auto 160%; }
+}
