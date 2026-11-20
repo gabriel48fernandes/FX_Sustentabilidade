@@ -133,3 +133,44 @@
 
 /* Para ajustar uma página específica, descomente e mude o número:
 body[data-page="quem"] .page-hero { --hero-shade: .35; } */
+
+/* ==========================================================================
+   HERO COM A FOTO DA EQUIPE + FUNDO NOS BLOCOS VERDES
+   Cole no FINAL de css/sections.css (vale por cima do que já existe).
+   ========================================================================== */
+
+/* ---------- Hero (desktop): foto mais limpa e texto longe dos rostos ---------- */
+.hero__overlay {
+  background:
+    linear-gradient(90deg, rgba(23, 25, 26, .5) 0%, rgba(23, 25, 26, .28) 45%, rgba(23, 25, 26, 0) 68%),
+    linear-gradient(180deg, rgba(23, 25, 26, .22) 0%, rgba(23, 25, 26, 0) 35%, rgba(23, 25, 26, .5) 100%);
+}
+.hero .eyebrow, .hero__lead, .hero__meta { text-shadow: 0 1px 14px rgba(0, 0, 0, .4); }
+.hero h1 { font-size: clamp(2.3rem, 4.3vw, 3.9rem); max-width: 13ch; }
+.hero__lead { max-width: 44ch; }
+
+/* ---------- Hero (celular): foto em cima, texto embaixo, sem cortar as pessoas ---------- */
+@media (max-width: 760px) {
+  .hero { display: block; min-height: 0; background: var(--c-floresta); }
+  .hero__media { position: relative; inset: auto; aspect-ratio: 4 / 3; }
+  .hero__poster { object-position: 90% 50%; }   /* 0% = esquerda, 100% = direita */
+  .hero__overlay {
+    inset: 0 0 auto 0; aspect-ratio: 4 / 3;
+    background: linear-gradient(180deg, rgba(23, 76, 58, 0) 55%, var(--c-floresta) 100%);
+  }
+  .hero__content { padding-top: 4px; padding-bottom: 48px; }
+  .hero h1 { max-width: none; }
+}
+
+/* ---------- Blocos verdes com foto de fundo (quase transparente) ----------
+   Troque o arquivo em --img-bloco (css/variables.css, ou aqui) para mudar todos de uma vez.
+   O número em opacity controla o quanto a foto aparece (0 = nada, 1 = foto cheia). */
+.section--forest, .cta-band, .front--featured { position: relative; isolation: isolate; overflow: hidden; }
+.section--forest::before, .cta-band::before, .front--featured::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: var(--img-bloco, url("../assets/img/hero-poster.jpg"));
+  background-repeat: no-repeat; opacity: .2;
+}
+.section--forest::before { background-size: 220% auto; background-position: 12% 70%; }
+.cta-band::before        { background-size: 300% auto; background-position: 47% 0%; }
+.front--featured::before { background-size: 450% auto; background-position: 43% 80%; }
