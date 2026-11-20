@@ -197,3 +197,7 @@ body[data-page="contato"]  .page-hero::before { background-position: 60% 0%; }
 @media (max-width: 760px) {
   .page-hero::before { background-size: auto 160%; }
 }
+@media (max-width: 760px) {
+  .hero__media, .hero__overlay { aspect-ratio: 1 / 1; }   /* foto quadrada = enquadra só os dois */
+  .hero__poster { object-position: 97% 50%; }             /* 0% = esquerda, 100% = direita */
+}
